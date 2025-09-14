@@ -1,6 +1,118 @@
-# Getting Started with Create React App
+# RuleCMS Widget Demo - Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A demonstration React application showcasing how to integrate **RuleCMS widgets** into any React application using the `@rulecms/widget-react` package.
+
+## What is RuleCMS?
+
+**RuleCMS** is a powerful content management system that allows you to create dynamic, customizable widgets through a visual composer interface. These widgets can then be published and integrated into any React application with minimal code.
+
+## What this demo shows
+
+This Create React App demonstrates:
+
+- ✅ **Easy Integration**: How to add RuleCMS widgets to any React app with just a few lines of code
+- ✅ **Published Widget Rendering**: Display widgets created in the RuleCMS composer using their published keys
+- ✅ **App Token Authentication**: Secure access to published widgets using app tokens
+- ✅ **Zero Configuration**: Works out of the box with standard React applications
+
+## How it works
+
+1. **Create widgets** in the RuleCMS composer interface
+2. **Publish widgets** to get a unique published key
+3. **Generate app tokens** for secure access
+4. **Integrate widgets** into your React app using the `RuleCMSWidget` component
+
+## Quick Start
+
+### Prerequisites
+
+- Node.js 16+
+- npm or yarn
+- A RuleCMS account with published widgets and app tokens
+
+### Installation
+
+```bash
+# Clone this repository
+git clone <repository-url>
+cd use_rulecms_create_react_app
+
+# Install dependencies
+npm install
+
+# Set your app token (see Environment Variables section)
+cp .env.example .env.local
+# Edit .env.local with your actual app token
+
+# Start the development server
+npm start
+```
+
+The app will open at `http://localhost:3000`
+
+## Environment Variables
+
+Create a `.env.local` file in the root directory:
+
+```env
+# Your RuleCMS App Token
+REACT_APP_RULECMS_TOKEN=your_app_token_here
+
+# RuleCMS API Endpoint
+# For production, use https://rulecms.com
+# For local development, use your local server
+REACT_APP_RULECMS_ENDPOINT=https://rulecms.com
+```
+
+**Important**: Never commit your actual app tokens to version control. Use environment variables and keep them secure.
+
+## Code Example
+
+Here's how simple it is to add a RuleCMS widget to your React app:
+
+```jsx
+import React from 'react';
+import { RuleCMSWidgetProvider, RuleCMSWidget } from '@rulecms/widget-react';
+
+function App() {
+  const appToken = process.env.REACT_APP_RULECMS_TOKEN;
+  const endpoint = process.env.REACT_APP_RULECMS_ENDPOINT || "https://rulecms.com";
+
+  return (
+    <RuleCMSWidgetProvider token={appToken} endpoint={endpoint}>
+      <div className="App">
+        <h1>My React App with RuleCMS Widget</h1>
+
+        <RuleCMSWidget
+          publishedKey="your-published-widget-key"
+        />
+      </div>
+    </RuleCMSWidgetProvider>
+  );
+}
+
+export default App;
+```
+
+## Getting Your Published Key and App Token
+
+### Published Key
+1. Create a widget in the RuleCMS composer
+2. Click "Publish" to publish your widget
+3. Copy the generated published key
+
+### App Token
+1. Go to your RuleCMS project settings
+2. Navigate to "API Tokens" or "App Tokens"
+3. Generate a new app token with appropriate permissions
+4. Copy the token and add it to your environment variables
+
+## Features Demonstrated
+
+- **Widget Rendering**: Display complex, interactive widgets created in RuleCMS
+- **Responsive Design**: Widgets automatically adapt to different screen sizes
+- **Dynamic Content**: Widgets can display dynamic data and interactive elements
+- **Secure Integration**: App tokens ensure secure access to your published content
 
 ## Available Scripts
 
@@ -11,36 +123,50 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in the interactive watch mode.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Builds the app for production to the `build` folder.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Project Structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+use_rulecms_create_react_app/
+├── public/
+│   ├── index.html          # Updated with RuleCMS meta tags
+│   └── favicon.ico         # RuleCMS favicon
+├── src/
+│   ├── App.tsx             # Main app component with RuleCMS widget
+│   ├── App.css             # Styling
+│   └── index.tsx           # App entry point
+├── .env.example            # Environment variables template
+├── LICENSE                 # MIT License
+└── README.md               # This file
+```
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **RuleCMS Documentation**: [Coming Soon]
+- **@rulecms/widget-react Package**: [npm package link]
+- **RuleCMS Website**: [Website URL]
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Support
+
+For questions, issues, or contributions:
+
+- **GitHub Issues**: [Repository Issues URL]
+- **Documentation**: [Documentation URL]
+- **Community**: [Community/Discord URL]
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+**Built with ❤️ by the RuleCMS team**
+
+*This demo shows just how easy it is to integrate powerful, visual content management into any React application. Get started with RuleCMS today!*
