@@ -58,9 +58,9 @@ Create a `.env.local` file in the root directory:
 # Your RuleCMS App Token
 REACT_APP_RULECMS_TOKEN=your_app_token_here
 
-# RuleCMS API Endpoint
+# RuleCMS API Endpoint (Optional)
+# You typically do not have to set it, as the `@rulecms/widget-react` package defaults to https://rulecms.com if no value is provided
 # For production, use https://rulecms.com
-# For local development, use your local server
 REACT_APP_RULECMS_ENDPOINT=https://rulecms.com
 ```
 
