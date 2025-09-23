@@ -3,9 +3,9 @@ import { RuleCMSWidgetProvider, RuleCMSWidget } from '@rulecms/widget-react';
 import './App.css';
 
 function App() {
-  // Demo values - replace with your actual published key and app token
-  const publishedKey = "54dd0702-2c1c-4472-9ba9-c06514107a84---widget-9a31b6c8-ed17-484f-864c-bdab49c68ec7";
-  const appToken = process.env.REACT_APP_RULECMS_TOKEN || "demo-app-token";
+  // Production values from environment variables
+  const publishedKey = process.env.REACT_APP_PUBLISHED_KEY || "ab0ea12b-af32-4d61-90b2-6af534f87290---widget-27eec7b6-669a-4ceb-b37c-14fdb7abb743";
+  const appToken = process.env.REACT_APP_RULECMS_TOKEN || "lEYWhW85gwxHXj3cyomTsNra6MaXu8Q90aa1Q5zjNNVUdrGko7VYLZtMH5n9FI5E";
   const endpoint = process.env.REACT_APP_RULECMS_ENDPOINT || "https://rulecms.com";
 
   return (
