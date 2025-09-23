@@ -2,6 +2,12 @@
 
 A comprehensive demonstration showing how to integrate **RuleCMS widgets** into any React application. This project serves as both a working example and a tutorial for developers who want to add RuleCMS widgets to their own React applications.
 
+## 🚀 Live Demo
+
+**[View the live demo at https://use-rulecms-create-react-app.pages.dev/](https://use-rulecms-create-react-app.pages.dev/)**
+
+Experience the RuleCMS widget integration in action with this deployed example.
+
 ## What is RuleCMS?
 
 **RuleCMS** is a powerful visual content management system that lets you:
