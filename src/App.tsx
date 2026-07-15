@@ -2,6 +2,11 @@ import React from 'react';
 import { RuleCMSWidgetProvider, RuleCMSWidget } from '@rulecms/widget-react';
 import './App.css';
 
+// Required since @rulecms/widget-react v15 — register the default component library.
+const rulecmsLibraries = {
+  default: () => import('@rulecms/source-components-react'),
+};
+
 function App() {
   // Production values from environment variables
   const publishedKey = process.env.REACT_APP_PUBLISHED_KEY || "ab0ea12b-af32-4d61-90b2-6af534f87290---widget-27eec7b6-669a-4ceb-b37c-14fdb7abb743";
@@ -9,7 +14,7 @@ function App() {
   const endpoint = process.env.REACT_APP_RULECMS_ENDPOINT || "https://rulecms.com";
 
   return (
-    <RuleCMSWidgetProvider token={appToken} endpoint={endpoint}>
+    <RuleCMSWidgetProvider token={appToken} endpoint={endpoint} libraries={rulecmsLibraries}>
       <div className="App">
         <header className="App-header">
           <h1>RuleCMS Widget Demo</h1>
