@@ -13,7 +13,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@rulecms/source-components-react": "^19.0.1",
+    "@rulecms/source-components-react": "^19.0.2",
     "@rulecms/widget-react": "^20.0.0",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.8.0",
