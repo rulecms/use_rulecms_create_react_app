@@ -14,7 +14,7 @@
   "private": true,
   "dependencies": {
     "@rulecms/source-components-react": "^20.19.0",
-    "@rulecms/widget-react": "^22.16.0",
+    "@rulecms/widget-react": "^22.17.0",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.8.0",
     "@testing-library/react": "^16.3.0",
